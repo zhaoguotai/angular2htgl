@@ -1,0 +1,87 @@
+
+
+<div class="flex_row flex_space_between" style="height:100%;">
+    <!--设置左侧导航-->
+    <nav class="flex_column">
+        <div class="profile">
+            <ul>
+                <li><img src="assets/images/profile_small.jpg" alt="头像"/></li>
+                <li class="profile_manage">
+                    <a href="#">
+                        <h5>admin</h5>
+                        <p>管理员
+                            <span class="caret"></span>
+                        </p>
+                    </a>
+                    <ul class="profile_setPwd">
+                        <li><a href="#">修改密码</a></li>
+                        <li><a href="#">安全退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+        <div class="navbar">
+            <ul id="navbar">
+                <li><a (click)=navbarChangeTabs() routerLink="/index/main"><i class="fa fa-home"></i>首页</a></li>
+
+                <li *ngFor="let navbarList of navbarLists">
+                    <a class="collapse_title"><i class="fa" [ngClass]="navbarList.icon"></i>{{navbarList.nav_header}} <b class="navbar_left"><i class="fa fa-angle-right"></i></b></a>
+                    <ul class="collapse_body">
+                        <li   *ngFor="let navbarList_child of navbarList.nav_child"><a (click)=showTabs(navbarList_child.nav_child_name,navbarList_child.href) routerLink="{{navbarList_child.href}}">{{navbarList_child.nav_child_name}}</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <!--设置右侧部分-->
+    <section class="flex_column flex_space_start">
+        <!--设置最顶部部分-->
+        <div class="navicon">
+            <i class="fa fa-navicon"></i>
+        </div>
+        <!--设置导航页签部分-->
+        <div class="active0 section_nav flex_row flex_space_between">
+            <div class="section_nav_1">
+                <ul>
+                    <li class="">
+                        <i class="fa fa-backward"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="section_nav_2" >
+                <ul id="section_nav_2">
+                    <li  routerLinkActive="active0"  *ngFor="let navbarTab of navbarTabs let i=index" (click)=tabsChange(i) > <a  routerLink="{{navbarTab.routerUrl}}">{{navbarTab.name}}</a> <i (click)=closeSection(i,navbarTab.routerUrl) *ngIf="navbarTab.showClose" class="fa fa-times-circle"></i> </li>
+                </ul>
+            </div>
+            <div class="section_nav_3">
+                <ul class="flex_row flex_space_between">
+                    <li><i class="fa fa-forward"></i></li>
+                    <li>关闭操作</li>
+                    <li> <i class="fa fa-sign-out"></i>退出 </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--设置指定内容部分-->
+        <div class="section_main">
+            <!--设置默认首页部分-->
+            <!--<iframe style="display: block" data-addr="tpl/main.html" width="100%" height="100%" src='tpl/member.html'>
+            </iframe>-->
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+
+</div>
+
+
+

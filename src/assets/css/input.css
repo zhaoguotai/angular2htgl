@@ -1,0 +1,63 @@
+.input_group input,
+.input_group select {
+  padding: 3px 10px;
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #a7b1c2;
+  border-radius: 3px;
+  outline: 0;
+  transition: all .2s linear;
+  box-shadow: 0;
+  color: #a7b1c2;
+}
+.input_group input:focus,
+.input_group select:focus {
+  box-shadow: 0 0 3px #1AB394;
+}
+.input_group button {
+  color: #ffffff;
+  width: 100%;
+  background: #1AB394;
+  border-radius: 5px;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  border-color: #EEE;
+  font-weight: 300;
+  font-size: 16px;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+}
+.input_group button:active {
+  border: 1px solid #1AB000;
+}
+.input_group .button-block {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

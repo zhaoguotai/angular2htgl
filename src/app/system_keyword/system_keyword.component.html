@@ -1,0 +1,32 @@
+<div class="system-keyword">
+
+  <div class="member_button">
+    <button id="member_button_add" (click)=addPro()><i class="fa fa-pencil-square-o"></i>新增</button>
+    <button id="mosifyContent" (click)=modifyProduce()><i class="fa fa-edit"></i>修改信息</button>
+    <button class="member_delete" (click)=deleteProduce()><i class="fa fa-trash"></i>删除</button>
+  </div>
+
+
+  <div class="order-list">
+    <div class="member_table">
+      <table>
+        <thead>
+        <tr>
+          <th>id</th>
+          <th>关键字</th>
+          <th>创建时间</th>
+        </tr>
+        </thead>
+        <tbody id="produce_table_body">
+        <tr data-checked="false" *ngFor="let systemKeyword of systemKeywordLists">
+          <td>{{systemKeyword.id}}</td>
+          <td>{{systemKeyword.keyword}}</td>
+          <td>{{systemKeyword.creatTime}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <app-pagination [UniqueCode]="systemKeywordUniqueCode"
+                  (produceFromPagination)="comeFromPagination($event)"></app-pagination>
+</div>

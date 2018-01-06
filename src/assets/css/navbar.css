@@ -1,0 +1,44 @@
+html,
+body {
+  height: 100%;
+}
+.navbar {
+  background: #2F4050;
+  padding-top: 10px;
+  height: 100%;
+}
+.navbar > ul .active0 {
+  border-left: 4px solid #19AA8D;
+  background: #293846;
+}
+.navbar > ul .active0 > a {
+  color: #fff;
+}
+.navbar > ul > li {
+  position: relative;
+  cursor: pointer;
+}
+.navbar > ul > li:hover > a {
+  background: #293846;
+  color: #fff;
+}
+.navbar > ul > li a {
+  padding: 15px 25px;
+  display: block;
+  font-size: 13px;
+  color: #8095a8;
+  font-weight: 700;
+}
+.navbar > ul > li a i {
+  padding-right: 15px;
+}
+.navbar > ul > li a .navbar_left {
+  position: absolute;
+  right: 20px;
+}
+.navbar > ul > li > ul {
+  padding-left: 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .5s ease;
+}

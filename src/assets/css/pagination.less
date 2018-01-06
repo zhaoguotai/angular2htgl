@@ -1,0 +1,55 @@
+@import "variable.less";
+.myPagination{
+  padding:3px 0;
+  height:39px;
+  line-height: 39px;
+  margin-bottom:20px;
+  >div>i{
+    color:@font_base_color;
+    padding:5px 10px;
+    cursor: pointer;
+  }
+  div:first-child :hover{
+    background: @font_base_color_light;
+
+  }
+  .pagination_list{
+    li{
+      a{
+        color:@font_base_color;
+        padding:5px 10px;
+        cursor: pointer;
+        &:hover{
+          background: @font_base_color_light;
+        }
+      }
+      &:nth-child(4){
+        margin:0 10px;
+        color:@font_base_color;
+      }
+      input{
+        width:50px;
+        height:19px;
+        padding:3px 5px;
+        color:@font_base_color;
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    
+</head>
+<body>
+
+<div class="login">
+    <h1>hs</h1>
+    <h3>欢迎使用 名庄科技 后台管理系统</h3>
+
+    <form #login='ngForm' (ngSubmit)="login.form.valid && doLogin()">
+        <div class="input_group">
+            <input type="text" placeholder="用户名" required [(ngModel)]="model.name" name="name"/>
+        </div>
+        <div class="input_group">
+            <input type="password" placeholder="密码" required [(ngModel)]="model.psd" name="password"/>
+        </div>
+        <div class="input_group flex_row">
+            <input type="text" placeholder="验证码"/>
+            <div id="verify"></div>
+        </div>
+        <div class="input_group">
+            <input type="submit" value="登录" />
+        </div>
+    </form>
+</div>
+
+
+
+</body>
+</html>

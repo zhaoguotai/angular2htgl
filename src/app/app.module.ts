@@ -1,0 +1,64 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { AppComponent } from './app.component';
+import {loginComponent} from './login/login.component';
+import {indexComponent} from "./index/index.component";
+import {Routing} from './app.routes';
+import {mainComponent} from './main/main.component';
+import {memberComponent} from "./member/member.component";
+import { produceComponent } from "./produce/produce.component";
+import {adminComponent} from "./admin/admin.component";
+import {admin_nodeComponent} from "./admin_node/admin_node.component";
+import {admin_powerComponent} from "./admin_power/admin_power.component";
+import {money_detailComponent} from "./money_detail/money_detail.component";
+import {money_manageComponent} from "./money_manage/money_manage.component";
+import {orderComponent} from "./order/order.component";
+import {system_configComponent} from "./system_config/system_config.component";
+import {system_dictionaryComponent} from "./system_dictionary/system_dictionary.component";
+import {system_focusComponent} from "./system_focus/system_focus.component";
+import {post_articleComponent} from "./produce/post_article/post_article.component";
+import {system_keywordComponent} from "app/system_keyword/system_keyword.component";
+import {ProduceShareService} from "./share/produce-share.service";
+import { PaginationComponent } from './tpl/pagination/pagination.component';
+import { TableAbilityComponent } from './tpl/table-ability/table-ability.component';
+import AboutModule from "./home/home/home.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpService} from "./share/http.service";
+import {WritePostComponent} from "./write-post/write-post.component";
+
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    loginComponent,
+    indexComponent,
+    mainComponent,//主界面
+    memberComponent,//会员管理
+    produceComponent,//产品管理界面
+    adminComponent,//用户管理
+    admin_nodeComponent,//用户节点管理
+    admin_powerComponent,//用户权限管理
+    money_detailComponent,//资金明细
+    money_manageComponent,//资金管理
+    orderComponent,//订单管理
+    system_configComponent,//系统配置
+    system_dictionaryComponent,//系统字典
+    system_focusComponent,//系统焦点
+    system_keywordComponent,//系统关键字
+    post_articleComponent, PaginationComponent, TableAbilityComponent,WritePostComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    Routing,
+    AboutModule,
+    BrowserAnimationsModule,
+  ],
+  providers: [ProduceShareService,HttpService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

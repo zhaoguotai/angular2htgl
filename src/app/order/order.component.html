@@ -1,0 +1,40 @@
+<div class="order">
+  <div class="row">
+    <div class="col-md-2 col-xs-12 ">
+      <div class="input-group">
+        <input class="form-control" type="text" placeholder="用户名(手机号)">
+      </div>
+    </div>
+    <div class="col-md-2 col-xs-12 ">
+      <div class="input-group">
+        <input class="form-control" type="text" placeholder="订单编号">
+      </div>
+    </div>
+    <div class="col-md-2 col-xs-12 ">
+      <select name="" id="">
+        <option value="1">请选择</option>
+        <option value="2">后台取消</option>
+        <option value="3">失效</option>
+        <option value="4">未付款</option>
+        <option value="5">已付款</option>
+        <option value="6">配送中</option>
+        <option value="7">完成</option>
+      </select>
+    </div>
+    <div class="col-md-2 col-xs-12">
+      <div class="input-group">
+        <input type="button" class="btn btn-primary" value="搜索">
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row order-list">
+    <div class="member_table">
+      <app-table-ability [comeFromPaginLists]="orderLists" [comeFromParentTheads]="orderTheads"></app-table-ability>
+    </div>
+  </div>
+  <app-pagination [UniqueCode]="orderPageUniqueCode"
+                  (produceFromPagination)="comeFromPagination($event)"></app-pagination>
+
+</div>
+

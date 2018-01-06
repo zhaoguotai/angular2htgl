@@ -1,0 +1,41 @@
+@import "variable.less";
+.tabs{
+
+  .active a{
+    background: @tabs_content_active_color;
+    color:#fff ;
+    cursor: pointer;
+  }
+  li{
+    padding:@tabs_li_padding;
+    line-height:@tabs_head_height;
+    &:hover a{
+      background: @tabs_content_active_color;
+      color:#fff;
+    }
+    a{
+      padding:2px 5px;
+    }
+  }
+  li+li{
+    border-left:0;
+  }
+}
+.tabs-content{
+  >div{
+    display:none;
+  }
+  >.active{
+    display:block;
+  }
+}
+
+
+
+
+
+
+
+
+
+

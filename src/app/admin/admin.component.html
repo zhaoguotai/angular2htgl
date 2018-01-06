@@ -1,0 +1,18 @@
+<div class="admin">
+
+  <div class="member_button">
+    <button id="member_button_add" (click)=addPro()><i class="fa fa-pencil-square-o"></i>新增</button>
+    <button id="mosifyContent" (click)=modifyProduce()><i class="fa fa-edit"></i>修改信息</button>
+    <button id="modifySort" (click)=modifySort()><i class="fa fa-sort-numeric-asc"></i>修改密码</button>
+    <button class="member_delete" (click)=deleteProduce()><i class="fa fa-trash"></i>删除</button>
+  </div>
+
+
+  <div class="order-list">
+    <div class="member_table">
+      <app-table-ability [comeFromParentTheads]="adminTheads" [comeFromPaginLists]="adminLists"></app-table-ability>
+    </div>
+  </div>
+  <app-pagination [UniqueCode]="adminUniqueCode"
+                  (produceFromPagination)="comeFromPagination($event)"></app-pagination>
+</div>

@@ -1,0 +1,179 @@
+<div class="produce flex_column flex_space_between">
+
+
+  <div>
+    <div class="produce_form">
+      <div class="input_group">
+        <input type="text" placeholder="产品名"/>
+        <select name="type" id="">
+          <option value="请选择">请选择</option>
+          <option value="屁颠虫音响">屁颠虫音响</option>
+          <option value="生活用品">生活用品</option>
+          <option value="电子玩具">电子玩具</option>
+        </select>
+        <button>搜索</button>
+      </div>
+    </div>
+
+
+    <!--添加修改按钮部分-->
+    <div class="member_button">
+      <button id="member_button_add" (click)=addPro()><i class="fa fa-pencil-square-o"></i>新增</button>
+      <button id="mosifyContent" (click)=modifyProduce()><i class="fa fa-edit"></i>修改</button>
+      <button id="modifySort" (click)=modifySort()><i class="fa fa-sort-numeric-asc"></i>修改排序</button>
+      <button class="member_delete" (click)=deleteProduce()><i class="fa fa-trash"></i>删除</button>
+    </div>
+
+
+    <!--内容列表部分-->
+    <div>
+      <div class="member_table">
+        <app-table-ability [comeFromParentTheads]="produceThead" [comeFromPaginLists]="produces"></app-table-ability>
+      </div>
+    </div>
+  </div>
+
+
+  <div>
+   <!--页签部分-->
+    <app-pagination [UniqueCode]="producePageUniqueCode"
+                    (produceFromPagination)="comeFromPagination($event)"></app-pagination>
+  </div>
+
+
+  <!--设置添加产品的html-->
+  <div class="publicArticle" *ngIf="showBoolean">
+    <div class="iframe">
+      <div class="flex_row flex_space_between iframe_part1">
+        <h4>添加产品</h4>
+        <div>
+          <i class="fa" [ngClass]="{'fa-expand':fullScreenCheck,'fa-compress':fullScreenCheck2}"
+             (click)=fullScreen()></i>
+          <i class="fa fa-times-circle" (click)=closeAddPro()></i>
+
+        </div>
+      </div>
+      <!--<div class="flex_row flex_space_between iframe_part2">-->
+        <!--<p>类别：</p>-->
+        <!--<div class="flex_row flex_space_between input_group">-->
+          <!--<select name="type">-->
+            <!--<option value="屁颠虫音响">屁颠虫音响</option>-->
+            <!--<option value="生活用品">生活用品</option>-->
+            <!--<option value="电子玩具">电子玩具</option>-->
+          <!--</select>-->
+          <!--<select name="package">-->
+            <!--<option value="套餐789">套餐789</option>-->
+            <!--<option value="周边配套">周边配套</option>-->
+          <!--</select>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="flex_row flex_space_between iframe_part3">-->
+        <!--<p>产品名称:</p>-->
+        <!--<div class="input_group">-->
+          <!--<input type="text" placeholder="产品名称"/>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="flex_row flex_space_between iframe_part4">-->
+        <!--<p>价格:</p>-->
+        <!--<div class="input_group">-->
+          <!--<input type="text" placeholder="价格"/>-->
+        <!--</div>-->
+      <!--</div>-->
+
+    <!--</div>-->
+      <app-write-post></app-write-post>
+  </div>
+
+
+  <!--设置修改排序的html-->
+  <div class="modifySort">
+    <div class="iframe">
+      <div class="flex_row flex_space_between iframe_part1">
+        <h4>修改排序</h4>
+        <div class="fa fa-times iframe_close" (click)=closeSort()>
+
+        </div>
+      </div>
+      <div class="iframe_part2">
+        <div class="iframe_part2_content">
+          <h5>点击可进行拖动排序</h5>
+          <h3>产品</h3>
+          <ul id="wrap">
+            <li>屁颠虫麦克风1</li>
+            <li>屁颠虫麦克风2</li>
+            <li>屁颠虫麦克风3</li>
+            <li>屁颠虫麦克4风</li>
+            <li>屁颠虫麦5克风</li>
+            <li>屁颠虫麦克风6</li>
+            <li>屁颠虫麦克风7</li>
+            <li>屁颠虫麦克风8</li>
+            <li>屁颠虫麦克风9</li>
+            <li>屁颠虫麦克风323</li>
+            <li>屁颠虫麦克风</li>
+            <li>屁颠虫麦克风</li>
+            <li>屁颠虫麦克风</li>
+            <li>屁颠虫麦克风7</li>
+            <li>屁颠虫麦克风8</li>
+            <li>屁颠虫麦克风9</li>
+            <li>屁颠虫麦克风323</li>
+            <li>屁颠虫麦克风</li>
+            <li>屁颠虫麦克风</li>
+            <li>屁颠虫麦克风</li>
+            <li>屁颠虫麦克风7</li>
+            <li>屁颠虫麦克风8</li>
+            <li>屁颠虫麦克风9</li>
+            <li>屁颠虫麦克风323</li>
+            <li>屁颠虫麦克风</li>
+            <li>屁颠虫麦克风</li>
+            <li>屁颠虫麦克风</li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="iframe_part3 input_group">
+        <button class="button-block">提交</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--当没有选中项目时候显示的内容-->
+  <div *ngIf="noneChecked" class="noneChecked">
+    <span>您没有选取的内容！</span>
+  </div>
+
+  <div class="confirm_delete" *ngIf="showDeleteConfirm">
+    <div class="confirm_div">
+      <div class="confirm_part1 flex flex_row flex_space_between">
+        <div>信息</div>
+        <span class="fa fa-times-circle" (click)="closeConfirm()"></span>
+      </div>
+      <div class="confirm_part2">
+        <p>餐车已添加该商品将一并删除，确定执行？</p>
+      </div>
+      <div class="confirm_part3">
+        <button class="confirm_sure" (click)="deleteProduceSure()">确定</button>
+        <button class="confirm_concel" (click)="closeConfirm()">取消</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="confirm_toggleOff" *ngIf="showtoggleOff">
+    <div class="confirm_div">
+      <div class="confirm_part1 flex flex_row flex_space_between">
+        <div>信息</div>
+        <span class="fa fa-times-circle" (click)="closeConfirm()"></span>
+      </div>
+      <div class="confirm_part2">
+        <p>确定执行？</p>
+      </div>
+      <div class="confirm_part3">
+        <button class="confirm_sure" (click)="toggleOffProduceSure()">确定</button>
+        <button class="confirm_concel" (click)="toggleOffConfirmConcel()">取消</button>
+      </div>
+    </div>
+  </div>
+
+</div>

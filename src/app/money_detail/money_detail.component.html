@@ -1,0 +1,25 @@
+<div class="money-detail">
+  <div class="row">
+    <div class="col-xs-2">
+      <select name="detail" id="">
+        <option value="0">请选择</option>
+        <option value="1">提现失败</option>
+        <option value="2">申请提现中</option>
+        <option value="3">提现完成</option>
+      </select>
+    </div>
+    <div class="col-xs-2">
+      <button class="btn btn-block btn-primary">搜索</button>
+    </div>
+  </div>
+
+
+
+  <div class=" moneyDetail">
+    <div class="member_table">
+      <app-table-ability [comeFromPaginLists]="moneyDetailLists" [comeFromParentTheads]="moneyDetailTheads"></app-table-ability>
+    </div>
+  </div>
+
+  <app-pagination [UniqueCode]="moneyDetailUniqueCode" (produceFromPagination)="comeFromPagination($event)"></app-pagination>
+</div>

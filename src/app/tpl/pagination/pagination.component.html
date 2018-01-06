@@ -1,0 +1,28 @@
+<div>
+  <!--页签部分-->
+  <div class="flex_row flex_space_between myPagination">
+    <div>
+      <i class="fa fa-refresh"></i>
+    </div>
+    <ul class="flex_row flex_space_between pagination_list">
+      <li (click)=goToLimit(1)><a><i class="fa fa-step-backward"></i></a></li>
+      <li (click)=changeList(page.value-1)><a ><i class="fa fa-backward"></i></a></li>
+      <li>|</li>
+      <li><input #page type="text" value="{{inputPageValte}}"/><span>  共 <span>{{pageNum}}</span>页</span></li>
+      <li>|</li>
+      <li (click)=changeList(page.value*1+1)><a ><i class="fa fa-forward"></i></a></li>
+      <li (click)=goToLimit(pageNum)><a><i class="fa fa-step-forward"></i></a></li>
+      <li>
+        <select name="page"  (change)=changeAmount($event)>
+          <option [value]="10">10</option>
+          <option [value]="20">20</option>
+          <option [value]="50">50</option>
+        </select>
+      </li>
+    </ul>
+    {{orderUniqueCode}}
+    <div>
+      <span>{{(inputPageValte-1)*pageAmount+1}} - {{inputPageValte*pageAmount}}</span> <span>共{{toggleProNum}}条</span>
+    </div>
+  </div>
+</div>

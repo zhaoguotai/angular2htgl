@@ -1,0 +1,38 @@
+
+<div class="admin-power" [@flyIn]="'active'">
+132465
+  <div class="member_button">
+    <button id="member_button_add" (click)=addPro()><i class="fa fa-pencil-square-o"></i>新增</button>
+    <button id="mosifyContent" (click)=modifyProduce()><i class="fa fa-edit"></i>修改信息</button>
+    <button id="modifySort" (click)=modifySort()><i class="fa fa-sort-numeric-asc"></i>修改密码</button>
+    <button class="member_delete" (click)=deleteProduce()><i class="fa fa-trash"></i>删除</button>
+  </div>
+
+
+  <div class="order-list">
+    <div class="member_table">
+      <table>
+        <thead>
+        <tr>
+          <th>id</th>
+          <th>组名</th>
+          <th>描述信息</th>
+          <th>所属模块</th>
+          <th>状态</th>
+        </tr>
+        </thead>
+        <tbody id="produce_table_body">
+        <tr data-checked="false" *ngFor="let adminPower of adminPowerLists">
+          <td>{{adminPower.id}}</td>
+          <td>{{adminPower.groupName}}</td>
+          <td>{{adminPower.desc}}</td>
+          <td>{{adminPower.belongModule}}</td>
+          <td>{{adminPower.state}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <app-pagination [UniqueCode]="adminPowerUniqueCode"
+                  (produceFromPagination)="comeFromPagination($event)"></app-pagination>
+</div>

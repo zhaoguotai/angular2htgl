@@ -1,0 +1,9 @@
+.navbar .myCollapse .navbar_left {
+  transform: rotate(90deg);
+}
+.navbar .myCollapse > .collapse_body {
+  max-height: 200px;
+}
+.navbar .myCollapse > .collapse_body li:hover a {
+  color: #fff;
+}

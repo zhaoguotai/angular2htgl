@@ -1,0 +1,34 @@
+<div class="system-config">
+
+  <div class="member_button">
+    <button id="member_button_add" (click)=addPro()><i class="fa fa-pencil-square-o"></i>新增</button>
+    <button id="mosifyContent" (click)=modifyProduce()><i class="fa fa-edit"></i>修改信息</button>
+    <button class="member_delete" (click)=deleteProduce()><i class="fa fa-trash"></i>删除</button>
+  </div>
+
+
+  <div class="order-list">
+    <div class="member_table">
+      <table>
+        <thead>
+        <tr>
+          <th>id</th>
+          <th>字段</th>
+          <th>值</th>
+          <th>内容介绍</th>
+        </tr>
+        </thead>
+        <tbody id="produce_table_body">
+        <tr data-checked="false" *ngFor="let systemConfig of systemConfigLists">
+          <td>{{systemConfig.id}}</td>
+          <td>{{systemConfig.wordSegment}}</td>
+          <td>{{systemConfig.value}}</td>
+          <td>{{systemConfig.intr}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <app-pagination [UniqueCode]="systemConfigUniqueCode"
+                  (produceFromPagination)="comeFromPagination($event)"></app-pagination>
+</div>

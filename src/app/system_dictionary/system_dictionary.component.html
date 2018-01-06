@@ -1,0 +1,69 @@
+<div class="systemDictionary">
+  <div class="col-xs-6">
+    <div class="member_button">
+      <button id="member_button_add" (click)=addPro()><i class="fa fa-pencil-square-o"></i>新增</button>
+      <button id="mosifyContent" (click)=modifyProduce()><i class="fa fa-edit"></i>修改信息</button>
+      <button class="member_delete" (click)=deleteProduce()><i class="fa fa-trash"></i>删除</button>
+    </div>
+
+
+    <div class="order-list">
+      <div class="member_table">
+        <table>
+          <thead>
+          <tr>
+            <th>id</th>
+            <th>关键字</th>
+            <th>创建时间</th>
+          </tr>
+          </thead>
+          <tbody id="produce_table_body">
+          <tr data-checked="false" *ngFor="let systemKeywordMain of systemKeywordMainLists">
+            <td>{{systemKeywordMain.id}}</td>
+            <td>{{systemKeywordMain.mainName}}</td>
+            <td>{{systemKeywordMain.creatTime}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <app-pagination [UniqueCode]="systemKeywordMainUniqueCode"
+                    (produceFromPagination)="comeFromPaginationMain($event)"></app-pagination>
+  </div>
+
+
+
+  <div class="col-xs-6">
+    <div class="member_button">
+      <button id="" (click)=addPro()><i class="fa fa-pencil-square-o"></i>新增</button>
+      <button id="" (click)=modifyProduce()><i class="fa fa-edit"></i>修改信息</button>
+      <button class="member_delete" (click)=deleteProduce()><i class="fa fa-trash"></i>删除</button>
+    </div>
+
+
+    <div class="order-list">
+      <div class="member_table">
+        <table>
+          <thead>
+          <tr>
+            <th>id</th>
+            <th>关键字</th>
+            <th>创建时间</th>
+          </tr>
+          </thead>
+          <tbody id="">
+          <tr data-checked="false" *ngFor="let systemKeywordSecond of systemKeywordSecondLists">
+            <td>{{systemKeywordSecond.id}}</td>
+            <td>{{systemKeywordSecond.secondName}}</td>
+            <td>{{systemKeywordSecond.identify}}</td>
+            <td>{{systemKeywordSecond.creatTime}}</td>
+            <td>{{systemKeywordSecond.sort}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <app-pagination [UniqueCode]="systemKeywordSecondUniqueCode"
+                    (produceFromPagination)="comeFromPaginationSecond($event)"></app-pagination>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+//设置navbar样式
+@import "variable.less";
+html,body{
+  height:100%;
+}
+.navbar{
+  background: @nav_color;
+  padding-top:10px;
+  height:100%;
+  >ul{
+    .active0{
+      border-left:4px solid #19AA8D;
+      background: @nav_hover;
+      >a{
+        color:@nav_base_hover_textcolor;
+      }
+    }
+    >li{
+      position: relative;
+      cursor: pointer;
+
+      &:hover{
+        >a{
+          background: @nav_hover;
+          color:@nav_base_hover_textcolor;
+        }
+      }
+      a{
+        padding:15px 25px;
+        display: block;
+        font-size: 13px;
+        color:@nav_base_textcolor;
+        font-weight: 700;
+        i{
+          padding-right:15px;
+        }
+        .navbar_left{
+          position: absolute;
+          right:20px;
+        }
+      }
+      >ul{
+        padding-left:30px;
+        max-height:0;
+        overflow: hidden;
+        transition: all .5s ease;
+      }
+    }
+  }
+}

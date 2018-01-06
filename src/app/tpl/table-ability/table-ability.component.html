@@ -1,0 +1,29 @@
+<table>
+  <thead>
+  <tr>
+    <th *ngFor="let thead of comeFromParentTheads; let i = index" (click)=sortBy(i)>{{thead}}</th>
+  </tr>
+  </thead>
+  <tbody id="produce_table_body">
+  <tr data-checked="false" *ngFor='let comeFromPagin of comeFromPaginLists let i=index' (click)=proClick(i)
+      [ngClass]="{active0:clickColor[i]}">
+    <td>{{comeFromPagin?.id}}</td>
+    <td>{{comeFromPagin?.pName ||comeFromPagin?.orderIdNumber ||comeFromPagin.mname || comeFromPagin.userId||comeFromPagin.uname}}</td>
+    <td>{{comeFromPagin?.pDirector ||comeFromPagin?.orderUname || comeFromPagin.cash || comeFromPagin.moneyDetailTitle||comeFromPagin.realName}}</td>
+    <td>{{comeFromPagin?.pCreatTime|| comeFromPagin?.orderPrice || comeFromPagin.cashTime ||comeFromPagin.moneyDetailType || comeFromPagin.lastEntryTime}}</td>
+
+    <td>{{comeFromPagin.pDirector || comeFromPagin?.orderState || comeFromPagin.wechat || comeFromPagin.moneyDetailNumber || comeFromPagin.lastEntryIp}}</td>
+    <td [hidden]="!comeFromPagin.online">
+      <button (click)="proDown(i)"><i class="fa" [class.fa-toggle-on]="comeFromPagin.online"
+                                      [class.fa-toggle-off]="!comeFromPagin.online"></i> <span
+        *ngIf="comeFromPagin.online">下架</span>
+        <span *ngIf="!comeFromPagin.online">上架</span></button>
+    </td>
+    <td [hidden]="!comeFromPagin?.orderHandle">{{comeFromPagin?.orderHandle}}</td>
+    <td [hidden]="!comeFromPagin.moneyState">{{comeFromPagin.moneyState}}</td>
+    <td [hidden]="!comeFromPagin.moneyDetailFrom">{{comeFromPagin.moneyDetailFrom}}</td>
+    <td [hidden]="!comeFromPagin.moneyDetailTime">{{comeFromPagin.moneyDetailTime}}</td>
+    <td [hidden]="!comeFromPagin.handle">解锁</td>
+  </tr>
+  </tbody>
+</table>

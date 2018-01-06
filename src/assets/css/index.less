@@ -1,0 +1,528 @@
+@import "input.less";
+@import "variable.less";
+@import "flex.less";
+@import "grid.less";
+@import "setDefault.less";
+@import "navbar.less";
+@import "font-awesome.css";
+@import "collapse.less";
+@import "scroll.less";
+@import "pagination.less";
+//设置登录（login）页面css
+.login{
+  width:300px;
+  margin:0 auto;
+  input[type='submit']{
+    cursor: pointer;
+  }
+}
+#verify{
+  width:100px;
+  display: inline-block;
+  padding:0 5px;
+}
+
+//设置index页面css
+
+
+
+nav{
+  width:220px;
+  overflow-y: scroll;
+  flex-grow: 0;
+}
+.profile{
+
+  background: url(../images/header-profile.png) repeat;
+  padding:35px 0 25px 25px;
+  img{
+    border-radius: 50%;
+  }
+  .profile_manage{
+    position: relative;
+    >a{
+      color:@nav_base_textcolor;
+      >h5{
+        margin:0;
+        color:#DFE4ED;
+      }
+    }
+    .profile_setPwd{
+      background: #ffffff;
+      position: absolute;
+      top:40px;
+      display: none;
+      left:0;
+      >li{
+        padding:10px 20px;
+       &:hover{
+         background: #F4F4F4;
+       }
+      }
+    }
+    .active0{
+      display: block;
+    }
+  }
+
+
+  .caret{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+}
+
+
+//设置主体样式
+section{
+  height:100%;
+  flex-grow: 1;
+  .navicon{
+    height:50px;
+    background: #F3F3F4;
+    flex-grow: 0;
+
+  }
+  .section_nav{
+    height:42px;
+    border-top:1px solid #E7EAEC;
+    border-bottom: 2px solid #293846;
+    flex-grow: 0;
+    li{
+      line-height: 42px;
+      text-align: center;
+      cursor: pointer;
+      color:@font_base_color;
+      display: inline-block;
+      transition: all .3s linear;
+    }
+  }
+  .section_nav_1,.section_nav_3{
+    flex-grow: 0;
+    li:hover{
+      color:@font_base_color_dark;
+      background-color: @font_base_color_light;
+    }
+    li i{
+      text-align: center;
+    }
+  }
+  .section_nav_1 li{
+    width:40px;
+  }
+  .section_nav_3{
+    width:180px;
+    ul{
+      li:first-child{
+        width:40px;
+      }
+      li:last-child{
+        width:60px;
+      }
+      li:nth-child(2){
+        width:80px;
+      }
+    }
+  }
+  .section_nav_2{
+    flex-grow: 1;
+    li{
+      padding-right:5px;
+      a{
+        display:inline-block;
+        padding:0 10px;
+        color:@font_base_color;
+        transition:all .3s linear;
+        &:hover{
+        // background: @font_base_color_light;
+        color:@font_base_color_light;
+      }
+      }
+      i{
+        color:@font_base_color_dark;
+        border-radius: 50%;
+        transition:all .3s linear;
+        &:hover{
+          color:#fff ;
+        }
+      }
+
+    }
+    .active0{
+      background: #293846;
+      &:hover{
+        background: #293846;
+        color:#fff;
+      }
+    }
+  }
+
+  //设置主体中的Main部分的css样式;
+  .section_main{
+    // padding:20px 20px 20px 20px;
+    flex-grow: 1;
+    height:90%;
+    overflow-y:scroll;
+    overflow-x:hidden ;
+
+    >iframe{
+      overflow-y:auto;
+      border:0;
+      width:100%;
+    }
+  }
+}
+
+
+
+
+#section_main_index{
+  h5,p{
+    display: inline-block;
+  }
+  width:90%;
+  margin:0 auto;
+
+}
+
+
+
+
+
+
+//设置member页面css样式--------------------------------------------------------------------------
+
+.member_form,.produce_form{
+  padding-bottom: 10px;
+  .input_group{
+    padding:0;
+    border-bottom: 1px solid @font_base_color_light;
+    padding-bottom: 10px;
+    input,select{
+      display:inline-block;
+      width:20%;
+
+    }
+  }
+  button{
+    width:20%;
+  }
+}
+@media screen and (max-width:980px){
+  .member_form ,.produce_form{
+    .input_group{
+      input,select{
+        width:100%;
+        margin-top:10px;
+      }
+    }
+    button{
+      width:100%;
+      margin-top:10px;
+    }
+  }
+}
+.member_button{
+  button{
+    width:85px;
+    height:30px;
+    vertical-align: middle;
+    border:1px solid @font_base_color_light;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    background-color: transparent;
+  }
+}
+.member_table{
+  margin-top:15px;
+  width:100%;
+  height:640px;
+  overflow-y:auto;
+  background: #FFFFFF;
+  table{
+    border-collapse: collapse;
+    width:100%;
+    th{
+      background: #F5F5F5;
+    }
+    th,td{
+      border:1px solid @font_base_color_light;
+      height:35px;
+      line-height: 35px;
+      text-align: center;
+      border-spacing: 0;
+      cursor: default;
+    }
+    tbody{
+      tr{
+        &:hover{
+          background: #F5F5F5;
+        }
+        td{
+          button{
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            background-color: transparent;
+            border:1px solid @font_base_color_light;
+          }
+        }
+      }
+      .active0{
+        background: #DFF0D8;
+        &:hover{
+          background: #DFF0D8;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+//设置produce内页的css样式
+.produce{
+  padding:20px;
+  margin:0 auto;
+  position: relative;
+  width:100%;
+  height:810px;
+}
+
+//设置发布文章页面和修改文章页面的通用样式
+.publicArticle,.modifySort{
+  padding:3%;
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  // padding:20px;
+  background: rgba(0, 0, 0, .3);
+  transition:all .3s ease;
+}
+
+//设置发布文章页面和修改文章页面iframe_part1的通用样式
+.iframe{
+  margin:0 auto;
+  width:100%;
+  height:100%;
+  background: #F3F3F4;
+  overflow: hidden;
+  .iframe_part1>div i{
+    display: inline-block;
+    height:15px;
+    width:15px;
+    //line-height: 54px;
+    font-size: 15px;
+    color:@font_base_color;
+    cursor: pointer;
+    font-weight: 100;
+    border-radius: 50%;
+    &:hover{
+      color:@font_base_color_light;
+    }
+  }
+  .iframe_part1>div .fa{
+    font-size:13px;
+  }
+  .iframe_part1{
+    padding:5px  15px;
+    background: #FFFFFF;
+  }
+}
+
+
+
+
+//设置发布文章页面css
+.publicArticle{
+  .iframe_part1,.iframe_part2,.iframe_part3,.iframe_part4,.iframe_part5{
+    padding:5px  15px;
+  }
+  .iframe_part2,.iframe_part3,.iframe_part4{
+    line-height: 40px;
+    height:40px;
+    >p{
+      font-size: 15px;
+      width:10%;
+      font-weight:400;
+      color:@font_base_color_dark;
+    }
+    >div{
+
+      width:90%;
+      >select{
+        width:45%;
+        color:@font_base_color;
+        //vertical-align: bottom;
+      }
+      input{
+        width:100%;
+      }
+    }
+  }
+}
+
+
+
+//设置修改排序css样式
+.modifySort{
+  display:none;
+  .iframe{
+    height:764px;
+    position: relative;
+    overflow-y:auto ;
+    .iframe_part1{
+      .iframe_close{
+        cursor: pointer;
+        transition:all .3s ease;
+        &:hover{
+          color:@font_base_color_dark;
+          background: #fff;
+        }
+      }
+    }
+  }
+  .iframe_part2{
+    padding:20px 30px 0 30px;
+    .iframe_part2_content{
+      width:100%;
+      background: #FFFFFF;
+      padding:15px 30px;
+      h5{
+        background: #D8ECF6;
+        padding:10px 20px;
+        width:95%;
+        border-radius: 5px;
+      }
+      ul{
+        height:542px;
+        overflow-y:auto;
+        padding-bottom:20px;
+        li{
+          padding:10px 0;
+          padding-left:15px;
+          cursor: pointer;
+          border-radius:5px;
+          &:hover{
+            background: @font_base_color_light;
+          }
+        }
+      }
+    }
+
+  }
+
+  .iframe_part3{
+    position:absolute;
+    bottom: 0;
+    width:100%;
+    border:1px solid @font_base_color_light;
+    >button{
+      display:block;
+      border-radius: 0;
+    }
+  }
+}
+
+// 设置模态框
+.noneChecked,.confirm_div{
+  background-color:#fff;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.noneChecked{
+  background-color: rgba(0, 0, 0, .4);
+  padding:10px 20px;
+  >span{
+    color:#fff;
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
+
+.confirm_delete,.confirm_toggleOff{
+  background-color: rgba(0, 0, 0, .4);
+  position: absolute;
+  bottom:0;
+  top:0;
+  left:0;
+  right:0;
+  .confirm_div{
+    border-radius: 5px;
+    width:306px;
+    height:146px;
+    .confirm_part1{
+      padding:0 15px;
+      background:#F8F8F8;
+      color:@font_base_color_dark;
+      border-bottom:1px solid @font_base_color_dark;
+      height:42px;
+      line-height: 42px;
+      .fa-times-circle{
+        line-height: 42px;
+        &:hover{
+          cursor:pointer;
+          color:lighten(@font_base_color_dark,10%);
+        }
+      }
+    }
+    .confirm_part2{
+      height:64px;
+      line-height: 64px;
+      color:@font_base_color;
+
+    }
+    .confirm_part3{
+      text-align: right;
+      button{
+        cursor: pointer;
+        margin-right:10px;
+        outline: 0;
+        font-weight:400;
+        border:0;
+        padding:4px 8px;
+
+      }
+      .confirm_sure{
+        background: #4399EF;
+        color:#fff;
+        &:hover{
+          background: lighten(#4399EF,10%);
+        }
+      }
+    }
+  }
+}
+
+//设置订单页面css页面
+.order,.money-detail,.money-manage,.admin,.admin-power,.systemDictionary,.system-keyword,.system-config{
+  padding:20px;
+  .order-list{
+    background: #F5F5F5;
+    text-align: center;
+    min-height:600px;
+  }
+}
+
+//设置提现管理css样式
+.money-manage{
+  padding:20px;
+}
+
+
+
+

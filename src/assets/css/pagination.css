@@ -1,0 +1,32 @@
+.myPagination {
+  padding: 3px 0;
+  height: 39px;
+  line-height: 39px;
+  margin-bottom: 20px;
+}
+.myPagination > div > i {
+  color: #a7b1c2;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.myPagination div:first-child :hover {
+  background: #e3e6ec;
+}
+.myPagination .pagination_list li a {
+  color: #a7b1c2;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.myPagination .pagination_list li a:hover {
+  background: #e3e6ec;
+}
+.myPagination .pagination_list li:nth-child(4) {
+  margin: 0 10px;
+  color: #a7b1c2;
+}
+.myPagination .pagination_list li input {
+  width: 50px;
+  height: 19px;
+  padding: 3px 5px;
+  color: #a7b1c2;
+}

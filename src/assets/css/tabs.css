@@ -1,0 +1,25 @@
+.tabs .active a {
+  background: #293846;
+  color: #fff ;
+  cursor: pointer;
+}
+.tabs li {
+  padding: 0 10px;
+  line-height: 44px;
+}
+.tabs li:hover a {
+  background: #293846;
+  color: #fff;
+}
+.tabs li a {
+  padding: 2px 5px;
+}
+.tabs li + li {
+  border-left: 0;
+}
+.tabs-content > div {
+  display: none;
+}
+.tabs-content > .active {
+  display: block;
+}
